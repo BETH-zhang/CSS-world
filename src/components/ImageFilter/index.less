@@ -313,3 +313,33 @@
     mix-blend-mode: color-burn;
   }
 }
+
+.image-filter-sketch {
+  background-blend-mode: difference;
+  filter: brightness(3) invert(1) grayscale(1);
+}
+
+.image-filter-watercolor {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    height: inherit;
+    background: url(./mr.jpg) -2px -2px, url(./mr.jpg);
+    background-size: 100%;
+    background-blend-mode: difference;
+    filter: brightness(2) invert(1) grayscale(1);
+  }
+
+  &::after {
+    content: '';
+    position: absolute; left: 0; top: 0;
+    height: inherit; width: inherit;
+    background: url(./mr.jpg) -1px -1px;
+    background-size: 100%;
+    mix-blend-mode: multiply;
+    filter: brightness(1.3) blur(2px) contrast(2);
+  }
+}

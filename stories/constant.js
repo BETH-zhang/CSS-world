@@ -114,5 +114,12 @@ export const filterArray = [
     type: 'xpro2',
     name: 'xpro2',
     description: 'X Pro II 色调最为和谐的增亮滤镜，不会造成刺眼感。\n适用范围：色彩突出鲜明的照片，例如烈焰红唇，灰暗天空下的一块绿草地',
+  }, {
+    type: 'sketch',
+    name: '素描效果',
+    description: '该效果使用与风景'
+  }, {
+    type: 'watercolor',
+    name: '水彩效果'
   }
 ]
