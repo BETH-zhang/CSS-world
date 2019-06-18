@@ -1,0 +1,315 @@
+.image-filter {
+  width: 100%;
+  min-height: 100px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:after,
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:before {
+    z-index: 2;
+  }
+  
+  &:before {
+    z-index: 3;
+  }
+}
+
+.image-filter-night {
+  // 混合模式
+  background-blend-mode: darken;
+  // 滤镜
+  filter: brightness(80%) grayscale(20%) contrast(1.2);
+}
+
+.image-filter-girl {
+  background-blend-mode: soft-light;
+  filter: contrast(1.1);
+}
+
+.image-filter-1977 {
+  filter: contrast(1.1) brightness(1.1) saturate(1.3);
+
+  &:after {
+    background: rgba(243,106,188,.3);
+    mix-blend-mode: screen;
+  }
+}
+
+.image-filter-aden {
+  filter: hue-rotate(-20deg) contrast(.9) saturate(.85) brightness(1.2);
+
+  &::after {
+    background: -webkit-linear-gradient(left,rgba(66,10,14,.2),transparent);
+    background: linear-gradient(to right,rgba(66,10,14,.2),transparent);
+    mix-blend-mode: darken;
+  }
+}
+
+.image-filter-brannan {
+  filter: sepia(.5) contrast(1.4);
+
+  &::after {
+    background-color: rgba(161,44,199,.31);
+    mix-blend-mode: lighten;
+  }
+}
+
+.image-filter-brooklyn {
+  filter: contrast(.9) brightness(1.1);
+
+  &::after {
+    background: -webkit-radial-gradient(circle,rgba(168,223,193,.4) 70%,#c4b7c8);
+    background: radial-gradient(circle,rgba(168,223,193,.4) 70%,#c4b7c8);
+    mix-blend-mode: overlay;
+  }
+}
+
+.image-filter-clarendon {
+  filter: contrast(1.2) saturate(1.35);
+
+  &:before {
+    background: rgba(127,187,227,.2);
+    mix-blend-mode: overlay;
+  }
+}
+
+.image-filter-earlybird {
+  filter: contrast(.9) sepia(.2);
+
+  &::after {
+    background: -webkit-radial-gradient(circle,#d0ba8e 20%,#360309 85%,#1d0210 100%);
+    background: radial-gradient(circle,#d0ba8e 20%,#360309 85%,#1d0210 100%);
+    mix-blend-mode: overlay;
+  }
+}
+
+.image-filter-gingham {
+  filter: brightness(1.05) hue-rotate(-10deg);
+
+  &::after {
+    background: #e6e6fa;
+  }
+}
+
+.image-filter-hudson {
+  filter: brightness(1.2) contrast(.9) saturate(1.1);
+
+  &::after {
+    background: -webkit-radial-gradient(circle,#a6b1ff 50%,#342134);
+    background: radial-gradient(circle,#a6b1ff 50%,#342134);
+    mix-blend-mode: multiply;
+    opacity: .5;
+  }
+}
+
+.image-filter-inkwell {
+  filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(1);
+}
+
+.image-filter-kelvin {
+  &:before {
+    background: #382c34;
+    mix-blend-mode: color-dodge;
+  }
+
+  &::after {
+    background: #b77d21;
+    mix-blend-mode: overlay;
+  }
+}
+
+.image-filter-lark {
+  filter: contrast(.9);
+
+  &::before {
+    background: #22253f;
+    mix-blend-mode: color-dodge;
+  }
+
+  &::after {
+    background: rgba(242,242,242,.8);
+    mix-blend-mode: darken;
+  }
+}
+
+.image-filter-lofi {
+  filter: saturate(1.1) contrast(1.5);
+
+  &::after {
+    background: -webkit-radial-gradient(circle,transparent 70%,#222 150%);
+    background: radial-gradient(circle,transparent 70%,#222 150%);
+    mix-blend-mode: multiply;
+  }
+}
+
+.image-filter-maven {
+  filter: sepia(.25) brightness(.95) contrast(.95) saturate(1.5);
+
+  &:after {
+    background: rgba(3,230,26,.2);
+    mix-blend-mode: hue;
+  }
+}
+
+.image-filter-mayfair {
+  filter: contrast(1.1) saturate(1.1);
+
+  &::after {
+    background: -webkit-radial-gradient(40% 40%,circle,rgba(255,255,255,.8),rgba(255,200,200,.6),#111 60%);
+    background: radial-gradient(circle at 40% 40%,rgba(255,255,255,.8),rgba(255,200,200,.6),#111 60%);
+    mix-blend-mode: overlay;
+    opacity: .4;
+  }
+}
+
+.image-filter-moon {
+  filter: grayscale(1) contrast(1.1) brightness(1.1);
+
+  &::before {
+    background: #a0a0a0;
+    mix-blend-mode: soft-light;
+  }
+
+  &::after {
+    background: #383838;
+    mix-blend-mode: lighten;
+  }
+}
+
+.image-filter-nashville {
+  filter: sepia(.2) contrast(1.2) brightness(1.05) saturate(1.2);
+
+  &::before {
+    background: rgba(247,176,153,.56);
+    mix-blend-mode: darken;
+  }
+
+  &::after {
+    background: rgba(0,70,150,.4);
+    mix-blend-mode: lighten;
+  }
+}
+
+.image-filter-perpetua {
+  &::after {
+    background: -webkit-linear-gradient(top,#005b9a,#e6c13d);
+    background: linear-gradient(to bottom,#005b9a,#e6c13d);
+    opacity: .5;
+  }
+}
+
+.image-filter-reyes {
+  filter: sepia(.22) brightness(1.1) contrast(.85) saturate(.75);
+
+  &::after {
+    background: #efcdad;
+    opacity: .5;
+  }
+}
+
+.image-filter-rise {
+  filter: brightness(1.05) sepia(.2) contrast(.9) saturate(.9);
+
+  &::before {
+    background: -webkit-radial-gradient(circle,rgba(236,205,169,.15) 55%,rgba(50,30,7,.4));
+    background: radial-gradient(circle,rgba(236,205,169,.15) 55%,rgba(50,30,7,.4));
+    mix-blend-mode: multiply;
+  }
+
+  &::after {
+    background: -webkit-radial-gradient(circle,rgba(232,197,152,.8),transparent 90%);
+    background: radial-gradient(circle,rgba(232,197,152,.8),transparent 90%);
+    mix-blend-mode: overlay;
+    opacity: .6;
+  }
+}
+
+.image-filter-slumber {
+  filter: saturate(.66) brightness(1.05);
+
+  &::before {
+    background: rgba(69,41,12,.4);
+    mix-blend-mode: lighten;
+  }
+
+  &::after {
+    background: rgba(125,105,24,.5);
+    mix-blend-mode: soft-light;
+  }
+}
+
+.image-filter-stinson {
+  filter: contrast(.75) saturate(.85) brightness(1.15);
+
+  &::before {
+    background: rgba(240,149,128,.2);
+    mix-blend-mode: soft-light;
+  }
+}
+
+.image-filter-toaster {
+  filter: contrast(1.5) brightness(.9);
+
+  &::after {
+    background: -webkit-radial-gradient(circle,#804e0f,#3b003b);
+    background: radial-gradient(circle,#804e0f,#3b003b);
+    mix-blend-mode: screen;
+  }
+}
+
+.image-filter-valencia {
+  filter: contrast(1.08) brightness(1.08) sepia(.08);
+
+  &::after {
+    background: #3a0339;
+    mix-blend-mode: exclusion;
+    opacity: .5;
+  }
+}
+
+.image-filter-walden {
+  filter: brightness(1.1) hue-rotate(-10deg) sepia(.3) saturate(1.6);
+
+  &::after {
+    background: #04c;
+    mix-blend-mode: screen;
+    opacity: .3;
+  }
+}
+
+.image-filter-willow {
+  filter: grayscale(.5) contrast(.95) brightness(.9);
+
+  &::before {
+    background-color: -webkit-radial-gradient(40%,circle,#d4a9af 55%,#000 150%);
+    background-color: radial-gradient(40%,circle,#d4a9af 55%,#000 150%);
+    mix-blend-mode: overlay;
+  }
+
+  &::after {
+    background-color: #d8cdcb;
+    mix-blend-mode: color;
+  }
+}
+
+.image-filter-xpro2 {
+  filter: sepia(.3);
+
+  &::after {
+    background: -webkit-radial-gradient(circle,#e6e7e0 40%,rgba(43,42,161,.6) 110%);
+    background: radial-gradient(circle,#e6e7e0 40%,rgba(43,42,161,.6) 110%);
+    mix-blend-mode: color-burn;
+  }
+}
