@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import Test from '../src'
+import Test, { Image } from '../src'
 
-storiesOf('Test', module)
-  .add('测试组件', () => (<Test />))
+storiesOf('基础组件', module)
+  .add('图片效果1', () => (<Image />))

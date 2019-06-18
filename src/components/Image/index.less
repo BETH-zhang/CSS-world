@@ -1,0 +1,91 @@
+*, ::before, ::after {
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.image-wrapper {
+  margin: 0px 0px 30px;
+  position: relative;
+  background-color: rgb(199, 199, 199);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  img {
+    display: none;
+    visibility: hidden;
+  }
+
+  .bg {
+    opacity: 1;
+    z-index: 9;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    transition: all 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+  }
+
+  .curl {
+    z-index: 10;
+    background-color: rgb(247, 247, 247);
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 16%;
+    height: auto;
+    transform: translate(-100%, 100%);
+    transition: transform 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+    overflow: hidden;
+
+    &::before, 
+    &::after {
+      text-decoration: inherit;
+      vertical-align: inherit;
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      padding-top: 100%;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(27, 27, 28);
+      transform: skewX(45deg) translateX(50%);
+    }
+  }
+}
+
+.image-hover {
+  max-width: 500px;
+  max-height: 500px;
+
+  &:hover {
+    .image-wrapper {
+      .bg {
+        transform: scale(1.1);
+      }
+
+      .curl {
+        transform: translate(-1px, 1px);
+      }
+    }
+  }
+}
