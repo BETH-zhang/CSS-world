@@ -1,9 +1,9 @@
-# React-Component-Scaffold
+# CSS-World
 
-react组件脚手架，用来自动生成组件开发项目。依赖工具 public-cli.
+css组件。依赖 public-cli 生成.
+
+## 启动项目
 
 ```shell
-public-cli new
-select gitlab
-select uskid-component-scaffold
+npm start
 ```
