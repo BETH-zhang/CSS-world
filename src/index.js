@@ -1,4 +1,4 @@
-import Test from './components/Test'
+import Index from './components/Index'
 
 import CImage from './components/Image'
 import CText from './components/Text'
@@ -8,4 +8,4 @@ export const Image = CImage
 export const Text = CText
 export const Button = CButton
 
-export default Test
+export default Index
