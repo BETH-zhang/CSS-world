@@ -212,3 +212,142 @@ export const filterApplyArray = [
     name: '色相旋转',
   }
 ]
+
+export const timeCount = () => {
+  var eleCircles=document.querySelectorAll(".time-count circle");
+  var eleTimeSec=document.querySelector(".time-second");
+  var perimeter=Math.PI*2*170;
+  var circleInit=function(){
+    if(eleCircles[1]){
+      eleCircles[1].style.strokeDasharray = "1069 1069"
+    }
+    if(eleCircles[2]){
+      eleCircles[2].style.strokeDasharray = perimeter/2+" 1069"
+    }
+    eleTimeSec.innerHTML="10"
+  };
+  if (window.timerTimeCount) {
+    clearInterval(window.timerTimeCount)
+    window.timerTimeCount = null
+  }
+  var fnTimeCount=function(b){
+    if(window.timerTimeCount){return}
+    var b=b||10;
+    var a=function(){
+      var c=b/10;
+      if(eleCircles[1]){
+        // console.log(perimeter*c)
+        eleCircles[1].style.strokeDasharray = perimeter*c+" 1069"
+      }
+      if(eleCircles[2]&&b<=5){
+        eleCircles[2].style.strokeDasharray = perimeter*c+" 1069"
+      }
+      if(eleTimeSec){
+        eleTimeSec.innerHTML=b
+      }
+      b--;
+      if(b<0){
+        clearInterval(window.timerTimeCount);
+        window.timerTimeCount=null;
+        console.log("时间到！");
+        circleInit()
+      }
+    };
+  a();
+  window.timerTimeCount=setInterval(a,1000)};
+  fnTimeCount();
+}
+
+export const timeCountCss = () => {
+  // 元素
+  var eleCircle = document.getElementById('circle');
+  var eleSeconds = document.getElementById('seconds');
+
+  // 圆环状态还原
+  var circleInit = function () {
+    eleCircle.style.clipPath = '';
+    
+    eleSeconds.innerHTML = '10';
+  };
+
+  var timerTimeCount = null;
+  var fnTimeCount = function (seconds) {
+    if (timerTimeCount) {
+      return;	
+    }
+    // 倒计时方法
+    var seconds = seconds || 10;
+
+    var step = function () {
+      // 圆环匹配
+      var percent = seconds / 10;
+      
+      // clip-path严格来讲是个扇形
+      // 但polygon只能连接直线，因此，这个扇形半径就要处理的足够大，例如，500这样子
+      // 于是有公式
+      // x=a+rcosθ
+          // y=b+rsinθ
+      var a = 150, b = 150, r = 500;
+      var angle = Math.PI / 180 * (360 * percent - 90);
+      var x = a + r * Math.cos(angle);
+      var y = b + r * Math.sin(angle);
+      
+      // 总共7个点
+      var p1 = [a, b];
+      var p2 = [a, b];
+      var p3 = [a, b];
+      var p4 = [a, b];
+      var p5 = [a, b];
+      var p6 = [a, b];
+      var p7 = [a, b];
+      
+      if (x < a) {
+        p2 = [a, b - r];
+        p3 = [a + r, b - r];
+        p4 = [a + r, b + r];
+        p5 = [a, b + r];
+        p6 = [a - r, b];
+        p7 = [x, y];
+        if (y > b) {
+          p6 = p7;
+        }
+      } else {
+        p2 = [a, b - r];
+        p3 = [a + r, b - r];
+        p4 = [a + r, b];
+        p5 = [x, y];
+        p6 = p5;
+        p7 = p5;
+        if (y < b) {
+          p4 = [x, y];
+        }
+      }
+      eleCircle.style.clipPath = 'polygon(' + (function () {
+        return [p1, p2, p3, p4, p5, p6, p7].map(function (arr) {
+          return arr.map(function (pos) {
+            return pos + 'px';
+          }).join(' ');
+        }).join();	
+      })() + ')';
+      
+      eleSeconds.innerHTML = seconds;
+
+      seconds--;
+
+      if (seconds < 0) {
+        clearInterval(timerTimeCount);
+        timerTimeCount = null;
+        // 显示弹框
+        console.log('时间到！');
+        // 圆环状态还原
+        circleInit();
+      }
+    };
+
+    step();
+
+    timerTimeCount = setInterval(step, 1000);
+  };
+
+  fnTimeCount();
+}

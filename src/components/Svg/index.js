@@ -6,7 +6,6 @@ export default (props) => {
   return (<div className={classNames({
     'svg-modal': true,
     [`svg-modal-${props.type}`]: props.type,
+    [props.className]: props.className,
   })}>{props.children}</div>)
 }
-
-// type: waveMove

@@ -3,8 +3,8 @@ import { Row, Col, Card } from '../node_modules/antd/dist/antd'
 
 import { storiesOf } from '@storybook/react';
 import '../node_modules/antd/dist/antd.less'
-import Index, { VideoFilter, ImageFilter, Image, Text, Button } from '../src'
-import { filterArray, filterMixArray, filterApplyArray } from './constant'
+import Index, { Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
+import { timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
 // https://www.invisionapp.com/inside-design/category/design/
 // https://www.zhangxinxu.com/php/microCodeDetail?id=12
 // 
@@ -27,7 +27,55 @@ storiesOf('home', module)
   .add('index', () => (<Index />))
 
 storiesOf('base', module)
-  .add('filter', () => (<Row style={{ padding: '12px' }}>
+  .add('svg', () => (<Row>
+    <Col sm={24}>
+      <Card title="多彩圆环倒计时" onClick={timeCount}>
+        <Svg className="time-count">
+          <svg width="440" height="440" viewBox="0 0 440 440" className="center">
+            <defs>
+              <linearGradient x1="1" y1="0" x2="0" y2="0" id="gradient1">
+                <stop offset="0%" stopColor="#e52c5c"></stop>
+                <stop offset="100%" stopColor="#ab5aea"></stop>
+              </linearGradient>
+              <linearGradient x1="1" y1="0" x2="0" y2="0" id="gradient2">
+                <stop offset="0%" stopColor="#4352f3"></stop>
+                <stop offset="100%" stopColor="#ab5aea"></stop>
+              </linearGradient>
+            </defs>
+            <g style={{ transform: "matrix(0, -1, 1, 0, 0, 440)" }}>
+              <circle style={{ cx: 220, cy: 220, r: 170, stroke: '#f0f1f5', strokeWidth: 50, fill: 'none', strokeDasharray: '1069 1069' }}></circle>
+              <circle style={{ cx: 220, cy: 220, r: 170, stroke: "url('#gradient1')", strokeWidth: 50, fill: 'none', strokeDasharray: '1069 1069' }}></circle>
+              <circle style={{ cx: 220, cy: 220, r: 170, strokeWidth: 50, stroke: "url('#gradient2')", fill: 'none', strokeDasharray: '534.5 1069' }}></circle>
+            </g>
+          </svg>
+          <span className="time-second">10</span>
+        </Svg>
+      </Card>
+      <Card title="CSS3 conic-gradient锥形渐变" onClick={timeCountCss}>
+        <Svg>
+          <div id="circle" className="svg-modal svg-modal-gradient"></div>
+          <div id="seconds" className="time-second">10</div>
+        </Svg>
+      </Card>
+      <Card title="CSS clip裁剪实现12色渐变圆环">
+        <Svg type="sector">
+          {
+            Array(12).fill(0).map((item, index) => (<div className="sector" />))
+          }
+        </Svg>
+      </Card>
+      <Card title="模糊扇形色块的边界">
+        <Svg type="sector">
+          <div className="sector-group">
+{
+  Array(12).fill(0).map((item, index) => (<div className="sector" />))
+}
+          </div>
+        </Svg>
+      </Card>
+    </Col>
+  </Row>))
+  .add('filter', () => (<Row>
     <Col sm={24}>
       <Card title="原图">
         <ImageFilter type="" />

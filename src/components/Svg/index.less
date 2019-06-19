@@ -1,0 +1,92 @@
+.svg-modal {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  line-height: 1.5;
+
+  .time-second {
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    margin-top: -.75em;
+    text-align: center;
+    font-size: 100px;
+  }
+
+  svg {
+    transform: rotate(-0.05deg);
+
+    circle {
+      transition: stroke-dasharray .2s;
+    }
+  }
+}
+
+.svg-modal-gradient {
+  background: conic-gradient(#9ED110, #50B517, #179067, #476EAF, #9f49ac, #CC42A2, #FF3BA7, #FF5800, #FF8100, #FEAC00, #FFCC00, #EDE604);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(transparent 160px, #000 160px);
+  mask: radial-gradient(transparent 160px, #000 160px);
+  transition: clip-path .2s;
+}
+
+.setSector(@index, @color) {
+  .sector:nth-of-type(@{index}) {
+    // filter: hue-rotate(@index * 30deg);
+    transform: rotate((@index - 1) * 30deg);
+
+    &::after {
+      background: @color;
+    }
+  }
+}
+
+.svg-modal-sector {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  .sector-group {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    filter: blur(15px);
+    transform: scale(1.2); // 消除边缘
+    -webkit-mask: radial-gradient(transparent 110px, #000 110px); // 添加透明遮罩
+    mask: radial-gradient(transparent 110px, #000 110px);
+  
+    .sector {
+      // filter: blur(15px);
+    }
+  }
+
+  .sector {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    clip: rect(0 400px 400px 200px);
+    overflow: hidden;
+  }
+
+  .sector:after {
+    content: '';
+    width: inherit;
+    height: inherit;
+    background: #9ed112;
+    position: absolute;
+    clip: rect(0 200px 400px 0);
+    border-radius: 50%;
+    filter: hue-rotate(0deg);
+    transform: rotate(30deg);
+  }
+
+  @sectorList: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+  @sectorColors: #9ed112, #50b516, #2a9067, #476eaf, #9e49ac, #cc43a2, #f73ba8, #f65703, #f78104, #f9ac01, #facd00, #ede602;
+
+  .loop(@i) when (@i < length(@sectorList) + 1){
+    // .backgroundcard(extract(@bgcardList, @i),extract(@bgcardList, @i));
+    .setSector(extract(@sectorList, @i), extract(@sectorColors, @i));
+    .loop(@i+1);
+  }
+  .loop(1);
+}
