@@ -4,6 +4,7 @@ import './index.less'
 
 export default (props) => {
   return (<div className={classNames({
+    'text-line': true,
     'line-hover': !props.type,
     [`line-hover-${props.type}`]: props.type,
     'line-active': !props.type && props.active,

@@ -190,6 +190,10 @@ export const filterApplyArray = [
     name: '徽章点亮',
     style: () => ({ filter: 'grayscale(100%)' })
   }, {
+    type: 'brightness',
+    name: '图标变色',
+    style: () => ({ filter: 'brightness(2)' })
+  }, {
     type: 'radialBlur',
     name: '镜像模糊',
     children: (img) => (<div style={{ width: '400px', height: '400px', position: 'relative', overflow: 'hidden' }}>

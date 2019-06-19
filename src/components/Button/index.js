@@ -4,10 +4,11 @@ import './index.less'
 
 export default (props) => {
   return (<div className={classNames({
-    'install-btn': true,
-    'install-btn-active': props.active,
+    'bb-btn': true,
+    [`bb-btn-${props.type}`]: props.type,
+    'bb-btn-active': props.active,
+    [`bb-btn-${props.type}-active`]: props.active && props.type,
   })}>
-    <span>{props.children}</span>
-    <span>{props.children}</span>
+    {props.children}
   </div>)
 }

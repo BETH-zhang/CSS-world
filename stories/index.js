@@ -80,14 +80,33 @@ storiesOf('base', module)
     <Col sm={12}>
       <Card title="文字-waveMove">
         <Text type="waveMove">美小技术部</Text>
+        <Text type="waveMove" active>美小技术部</Text>
       </Card> 
     </Col>
   </Row>))
   .add('button', () => (<Row>
-    <Col sm={12}>
+    <Col sm={24}>
       <Card title="按钮">
-        <Button>美小技术部</Button>
-        <Button active>美小技术部</Button>
+        <Button type="install">
+          <span>美小技术部</span>
+          <span>美小技术部</span>
+        </Button>
+        <Button type="install" active>
+          <span>美小技术部</span>
+          <span>美小技术部</span>
+        </Button>
       </Card>
+    </Col>
+    <Col sm={24}>
+      <Card title="色调旋转滤镜">
+        <Button type="hueRotate">美小技术部</Button>
+        <Button type="hueRotate" active>美小技术部</Button>
+
+        {
+          Array(35).fill(0).map((item, index) => (
+            <Button type={`hueRotate hue-${(index + 1) * 10}`}>美小技术部</Button>
+          ))
+        }
+      </Card> 
     </Col>
   </Row>))

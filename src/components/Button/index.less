@@ -1,4 +1,4 @@
-.install-btn {
+.bb-btn-install {
   display: inline-block;
   position: relative;
   background-color: rgb(0, 0, 0);
@@ -49,8 +49,8 @@
   }
 }
 
-.install-btn:hover,
-.install-btn-active {
+.bb-btn-install:hover,
+.bb-btn-install-active {
   span:first-child {
     color: rgb(255, 255, 255);
   }
@@ -66,3 +66,73 @@
     transform: skewY(9.3deg) scaleY(2);
   }
 }
+
+.bb-btn {
+  margin: 0 5px;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #4c5161;
+  border: 1px solid #d0d0d5;
+  border-radius: 4px;
+  padding: 9px 15px;
+  min-width: 50px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
+  -webkit-transition: border-color .15s, background-color .15s, opacity .15s;
+  transition: border-color .15s, background-color .15s, opacity .15s;
+  cursor: pointer;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.bb-btn-hueRotate {
+  border: 1px solid #2486ff;
+  background-color: #2486ff;
+  color: #fff;
+}
+
+.bb-btn-hueRotate:hover,
+.bb-btn-hueRotate-active {
+  background-color: #0160d5;
+  border-color: #0160d5;
+  color: #fff;
+}
+
+.bb-btn-hueRotate:active {
+  background-color: #0057c3;
+  border-color: #0057c3;
+}
+
+.setHueRotate(@className, @angle) {
+  .@{className}{
+    filter: hue-rotate(@angle);
+    /**
+    90deg 90度旋转
+    .5turn 180度旋转
+    3.142rad 3.142弧度,近似一圈，也就是360度
+    */
+  }
+}
+
+@hueList:hue-10,hue-20,hue-30,hue-40,hue-50,hue-60,hue-70,hue-80,hue-90,hue-100,hue-110,hue-120,hue-130,hue-140,hue-150,hue-160,hue-170,hue-180,hue-190,hue-200,hue-210,hue-220,hue-230,hue-240,hue-250,hue-260,hue-270,hue-280,hue-290,hue-300,hue-310,hue-320,hue-330,hue-340,hue-350;
+// @hueActiveList:hue-10-active,hue-20-active,hue-30-active,hue-40-active,hue-50-active,hue-60-active,hue-70-active,hue-80-active,hue-90-active,hue-100-active,hue-110-active,hue-120-active,hue-130-active,hue-140-active,hue-150-active,hue-160-active,hue-170-active,hue-180-active,hue-190-active,hue-200-active,hue-210-active,hue-220-active,hue-230-active,hue-240-active,hue-250-active,hue-260-active,hue-270-active,hue-280-active,hue-290-active,hue-300-active,hue-310-active,hue-320-active,hue-330-active,hue-340-active,hue-350-active;
+// length(@bgcardList)
+
+.loop(@i) when (@i < length(@hueList)){
+  // .backgroundcard(extract(@bgcardList, @i),extract(@bgcardList, @i));
+  .setHueRotate(extract(@hueList, @i), @i * 10 * 1deg);
+  .loop(@i+1);
+}
+.loop(1);
+
+// .loop(@ii) when (@ii < length(@hueActiveList)){
+//   .setHueRotate(extract(@hueActiveList, @ii), @ii * 10 * 1deg);
+//   .loop(@ii+1);
+// }
+// .loop(1);
+
