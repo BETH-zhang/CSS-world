@@ -1,3 +1,4 @@
+import React from 'react'
 // https://www.sohu.com/a/126253548_544887
 // Instagram 滤镜大全
 // https://blog.csdn.net/ws1352864983/article/details/74188512
@@ -10,6 +11,50 @@
  */
 
 export const filterArray = [
+  {
+    type: 'blur',
+    name: '模糊',
+    description: 'filter:blur(5px)',
+  }, {
+    type: 'brightness',
+    name: '亮度',
+    description: 'filter:brightness(1.4)',
+  }, {
+    type: 'contrast',
+    name: '对比度',
+    description: 'filter:contrast(200%)',
+  }, {
+    type: 'dropShadow',
+    name: '投影',
+    description: 'filter:drop-shadow(4px 4px 8px blue)',
+  }, {
+    type: 'grayscale',
+    name: '灰度',
+    description: 'filter:grayscale(50%)',
+  }, {
+    type: 'hueRotate',
+    name: '色调变化',
+    description: 'filter:hue-rotate(90deg)',
+  }, {
+    type: 'invert',
+    name: '反相',
+    description: 'filter:invert(75%)',
+  }, {
+    type: 'opacity',
+    name: '透明度',
+    description: 'filter:opacity(25%)',
+  }, {
+    type: 'saturate',
+    name: '饱和度',
+    description: 'filter:saturate(230%)',
+  }, {
+    type: 'sepia',
+    name: '褐色',
+    description: 'filter:sepia(60%)',
+  }
+]
+
+export const filterMixArray = [
   {
     type: 'night',
     name: '模拟黑夜',
@@ -121,11 +166,42 @@ export const filterArray = [
     description: '该效果使用与风景',
     img: 'https://www.zhangxinxu.com/study/201903/css-idea/example.jpg',
     style: (img) => ({ background: `url(${img}) -2px -2px, url(${img})`, backgroundSize: 'contain' }),
-  // }, {
-  //   type: 'watercolor',
-  //   name: '水彩效果',
+  }, {
+    type: 'watercolor',
+    name: '水彩效果',
   // }, {
   //   type: 'pencil',
   //   name: '彩铅效果'
+  }
+]
+
+export const filterApplyArray = [
+  {
+    type: 'blur',
+    name: '封面图模糊处理',
+  }, {
+    type: 'blur',
+    name: '弹窗聚焦，页面元素模糊',
+  }, {
+    type: 'dropShadow',
+    name: '任意图形区域，产生投影效果',
+  }, {
+    type: 'grayscale',
+    name: '徽章点亮',
+    style: () => ({ filter: 'grayscale(100%)' })
+  }, {
+    type: 'radialBlur',
+    name: '镜像模糊',
+    children: (img) => (<div style={{ width: '400px', height: '400px', position: 'relative', overflow: 'hidden' }}>
+      <img src={img} className="radial-blur" />
+      <img src={img} />
+    </div>)
+  }, {
+    type: 'partBlur',
+    name: '局部模糊',
+    children: (img) => (<div style={{ width: '400px', height: '400px', position: 'relative', overflow: 'hidden' }}>
+      <img src={img} className="radial-blur" />
+      <img src={img} />
+    </div>) 
   }
 ]

@@ -6,6 +6,10 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  img {
+    width: 100%;
+  }
+
   &:after,
   &:before {
     content: '';
@@ -370,5 +374,72 @@
     height: inherit; width: inherit;
     background: url(./mr.jpg);
     background-size: 100%;
+  }
+}
+
+// 单纯的滤镜效果
+.image-filter-blur {
+  filter: blur(5px); // 模糊
+}
+
+.image-filter-brightness {
+  filter: brightness(1.4); // 亮度
+}
+
+.image-filter-contrast {
+  filter: contrast(200%); // 对比度
+}
+
+.image-filter-dropShadow {
+  filter: drop-shadow(4px 4px 8px #d06b4d); // 投影
+}
+
+.image-filter-grayscale {
+  filter: grayscale(50%); // 灰度
+}
+
+.image-filter-hueRotate {
+  filter: hue-rotate(90deg); // 色调变化
+}
+
+.image-filter-invert {
+  filter: invert(75%); // 反相
+}
+
+.image-filter-opacity {
+  filter: opacity(25%);
+}
+
+.image-filter-saturate {
+  filter: saturate(230%);
+}
+
+.image-filter-sepia {
+  filter: sepia(60%);
+}
+
+// 更多应用
+.image-filter-radialBlur {
+  .radial-blur {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    filter: blur(20px);
+    -webkit-mask-image: radial-gradient(transparent, transparent 10%, black 60%);
+    mask-image: radial-gradient(transparent, transparent 10%, black 60%);
+    transform: scale(1.2);
+  }
+}
+
+.image-filter-partBlur {
+  .radial-blur {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    filter: blur(12px);
+    -webkit-mask: no-repeat center;
+    -webkit-mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    -webkit-mask-size: cover, 100px 100px;
+    -webkit-mask-composite: exclude;
+    -webkit-mask-composite: source-out;
+    transform: scale(1.1);
   }
 }

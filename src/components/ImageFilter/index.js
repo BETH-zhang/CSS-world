@@ -13,5 +13,7 @@ export default (props) => {
     style={Object.assign({}, {
       backgroundImage: `url(${props.img || defaultImg})`
     }, props.style)}
-  />)
+  >
+    {props.children}
+  </div>)
 }
