@@ -8,6 +8,7 @@
  b=document.createElement("select");b.style.padding="5px";b.innerHTML=c.map(function(d){return '<option value="' + d + '">' + d + '</option>'}).join('');var a=document.createElement("label");a.style.margin="0 5px 0 20px";a.innerHTML="后期效果：";document.querySelector('.bilibili-player-video-control-bottom-left').appendChild(a);document.querySelector('.bilibili-player-video-control-bottom-left').appendChild(b);b.addEventListener("change",function()
  {document.querySelector(".bilibili-player-video").className="bilibili-player-video "+this.value})})();
  */
+
 export const filterArray = [
   {
     type: 'night',
@@ -117,9 +118,14 @@ export const filterArray = [
   }, {
     type: 'sketch',
     name: '素描效果',
-    description: '该效果使用与风景'
-  }, {
-    type: 'watercolor',
-    name: '水彩效果'
+    description: '该效果使用与风景',
+    img: 'https://www.zhangxinxu.com/study/201903/css-idea/example.jpg',
+    style: (img) => ({ background: `url(${img}) -2px -2px, url(${img})`, backgroundSize: 'contain' }),
+  // }, {
+  //   type: 'watercolor',
+  //   name: '水彩效果',
+  // }, {
+  //   type: 'pencil',
+  //   name: '彩铅效果'
   }
 ]

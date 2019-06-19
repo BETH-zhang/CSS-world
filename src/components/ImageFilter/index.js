@@ -10,8 +10,8 @@ export default (props) => {
       'image-filter': true,
       [`image-filter-${props.type}`]: props.type,
     })}
-    style={Object.assign({}, props.style, {
+    style={Object.assign({}, {
       backgroundImage: `url(${props.img || defaultImg})`
-    })}
+    }, props.style)}
   />)
 }
