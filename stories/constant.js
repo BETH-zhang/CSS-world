@@ -14,7 +14,7 @@ export const filterArray = [
   {
     type: 'blur',
     name: '模糊',
-    description: 'filter:blur(5px)',
+    description: `filter:blur(5px)`,
   }, {
     type: 'brightness',
     name: '亮度',
@@ -207,5 +207,8 @@ export const filterApplyArray = [
       <img src={img} className="radial-blur" />
       <img src={img} />
     </div>) 
+  }, {
+    type: 'pulse',
+    name: '色相旋转',
   }
 ]

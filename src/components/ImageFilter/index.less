@@ -443,3 +443,12 @@
     transform: scale(1.1);
   }
 }
+
+.image-filter-pulse {
+  animation: pulse 5s linear infinite;
+}
+
+@keyframes pulse {
+  from { filter: hue-rotate(0); }
+  to { filter: hue-rotate(360deg); }
+}
