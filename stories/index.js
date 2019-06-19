@@ -3,11 +3,13 @@ import { Row, Col, Card } from '../node_modules/antd/dist/antd'
 
 import { storiesOf } from '@storybook/react';
 import '../node_modules/antd/dist/antd.less'
-import Index, { ImageFilter, Image, Text, Button } from '../src'
+import Index, { VideoFilter, ImageFilter, Image, Text, Button } from '../src'
 import { filterArray } from './constant'
 // https://www.invisionapp.com/inside-design/category/design/
 // https://www.zhangxinxu.com/php/microCodeDetail?id=12
 // 
+
+const videoUrl = 'https://uskid.oss-cn-beijing.aliyuncs.com/video/%E5%8C%A0%E5%BF%83%E6%AF%94%E5%BF%83-%E7%BF%9F%E5%B0%91%E6%88%90%E8%80%81%E5%B8%88(5min).mp4'
 
 storiesOf('home', module)
   .add('index', () => (<Index />))
@@ -27,6 +29,13 @@ storiesOf('base', module)
       </Col>))
     }
     
+  </Row>))
+  .add('filter-video', () => (<Row>
+    <Col sm={24}>
+      <Card title="原视频">
+        <VideoFilter type="" src={videoUrl} autoPlay />
+      </Card>
+    </Col>  
   </Row>))
   .add('image', () => (<Row>
     <Col sm={12}>
