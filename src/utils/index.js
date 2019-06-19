@@ -152,3 +152,44 @@ export const hexAToRGBA = (h) => {
 
 //   return "rgba(" + (isPct ? r + "%," + g + "%," + b + "%," + a + "%" : +r + "," + +g + "," + +b + "," + a) + ")";
 // }
+
+export const rgbToHsl = (r, g, b) => {
+  const red = r / 255
+  const green = g / 255
+  const blue = b / 255
+
+  const cmin = Math.min(red, green, blue)
+  const cmax = Math.max(red, green, blue)
+  const delta = cmax - cmin;
+  let h = 0;
+  let s = 0;
+  let l = 0;
+
+  // Calculate hue
+  if (delta === 0) {
+    h = 0
+  } else if (cmax === red) {
+    h = ((green - blue) / delta) % 6
+  } else if (cmax === g) {
+    h = (blue - red) / delta + 2
+  } else {
+    h = (red - green) / delta + 4
+  }
+
+  h = Math.round(h * 60)
+  if (h < 0) {
+    h += 360
+  }
+
+  // Calculat lightness
+  l = (cmax + cmin) / 2
+
+  // Calculate saturation
+  s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1))
+
+  // Multiply l and s by 100
+  s = +(s * 100).toFixed(1)
+  l = +(l * 100).toFixed(1)
+
+  return `hsl(${h}, ${s}%, ${l}%)`
+}
