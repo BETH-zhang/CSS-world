@@ -1,6 +1,6 @@
-export const createRandomColors = () => {
+export const createRandomColors = (num) => {
   const colors = []
-  Array(100).fill(0).forEach(() => {
+  Array(num).fill(0).forEach(() => {
     const r = parseInt(Math.random() * 256);
     const g = parseInt(Math.random() * 256);
     const b = parseInt(Math.random() * 256);

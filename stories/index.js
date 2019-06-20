@@ -11,7 +11,7 @@ import { createRandomColors } from '../src/utils/index'
 // 
 import defaultImg from '../src/components/ImageFilter/mr.jpg'
 const videoUrl = 'https://uskid.oss-cn-beijing.aliyuncs.com/video/%E5%8C%A0%E5%BF%83%E6%AF%94%E5%BF%83-%E7%BF%9F%E5%B0%91%E6%88%90%E8%80%81%E5%B8%88(5min).mp4'
-const colors = createRandomColors()
+const colors = createRandomColors(100)
 
 const filters = [
   {
@@ -50,7 +50,7 @@ storiesOf('base', module)
 
     <Col sm={6}>
       <Card title="亮度排序-shl">
-        <Color colors={colors} type="sort" />
+        <Color colors={colors} type="divide" sortType="saturation" />
       </Card>
     </Col>
   </Row>))
