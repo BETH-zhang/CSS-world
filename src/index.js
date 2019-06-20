@@ -7,7 +7,9 @@ import CImageFilter from './components/ImageFilter'
 import CVideoFilter from './components/VideoFilter'
 import CSvg from './components/Svg'
 import CColor from './components/Color'
+import CBlendMode from './components/BlendMode'
 
+export const BlendMode = CBlendMode
 export const Color = CColor
 export const Svg = CSvg
 export const VideoFilter = CVideoFilter

@@ -213,6 +213,96 @@ export const filterApplyArray = [
   }
 ]
 
+import maskImg1 from '../src/components/BlendMode/mask/bright.jpg'
+import maskImg2 from '../src/components/BlendMode/mask/diffuse.jpg'
+import maskImg3 from '../src/components/BlendMode/mask/rains.jpg'
+import maskImg4 from '../src/components/BlendMode/mask/snow.jpg'
+
+export const blendModeArray = [
+  {
+    type: 'screen',
+    name: '滤色模式',
+    maskImg: maskImg1,
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: 'sreen滤色的计算公式：C = 255 - ((255 - A) * (255 - B)) / 255 \n mix-blend-mode: screen;\n 适合黑色背景图片的点缀效果',
+  }, {
+    type: 'normal',
+    name: '正常',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'multiply',
+    name: '正片叠底',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'overlay',
+    name: '叠加',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'darken',
+    name: '变暗',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'lighten',
+    name: '变亮',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'color-dodge',
+    name: '颜色减淡',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'color-burn',
+    name: '颜色加深',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'hard-ligh',
+    name: '强光',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'soft-light',
+    name: '柔光',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'difference',
+    name: '差值',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'exclusion',
+    name: '排除',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'hue',
+    name: '色相',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'saturation',
+    name: '饱和度',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'color',
+    name: '颜色',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }, {
+    type: 'luminosity',
+    name: '亮度',
+    children: () => (<div><img src={maskImg1} /></div>),
+    description: '',
+  }
+]
+
 export const timeCount = () => {
   var eleCircles=document.querySelectorAll(".time-count circle");
   var eleTimeSec=document.querySelector(".time-second");

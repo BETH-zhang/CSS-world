@@ -3,8 +3,8 @@ import { Row, Col, Card } from '../node_modules/antd/dist/antd'
 
 import { storiesOf } from '@storybook/react';
 import '../node_modules/antd/dist/antd.less'
-import Index, { Color, Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
-import { timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
+import Index, { BlendMode, Color, Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
+import { blendModeArray, timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
 import { createRandomColors } from '../src/utils/index'
 // https://www.invisionapp.com/inside-design/category/design/
 // https://www.zhangxinxu.com/php/microCodeDetail?id=12
@@ -29,6 +29,31 @@ storiesOf('home', module)
   .add('index', () => (<Index />))
 
 storiesOf('base', module)
+  .add('blend-mode', () => (<Row>
+    <Col sm={24}>
+      <Card title="原图">
+        <BlendMode style={{
+          backgroundColor: 'green',
+          backgroundBlendMode: 'darken'
+        }} />
+      </Card>
+    </Col>
+
+    {
+      blendModeArray.map((item) => (<Col sm={12}>
+        <Card title={item.name}>
+          <BlendMode
+            type={item.type}
+            img={item.img}
+            style={item.style && item.style(defaultImg)}
+          >
+            {item.children && item.children(defaultImg)}
+          </BlendMode>
+          <p style={{ height: '60px', marginTop: '12px' }}>{item.description}</p>
+        </Card>
+      </Col>))
+    }
+  </Row>))
   .add('color', () => (<Row>
     <Col sm={6}>
       <Card title="随机颜色组">
@@ -94,9 +119,9 @@ storiesOf('base', module)
       <Card title="模糊扇形色块的边界">
         <Svg type="sector">
           <div className="sector-group">
-{
-  Array(12).fill(0).map((item, index) => (<div className="sector" />))
-}
+            {
+              Array(12).fill(0).map((item, index) => (<div className="sector" />))
+            }
           </div>
         </Svg>
       </Card>

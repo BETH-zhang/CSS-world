@@ -1,0 +1,117 @@
+.blend-mode {
+  overflow: hidden;
+  position: relative;
+  z-index: 1; // 这两行代码，用来与mix-blend-mode混合模式阻隔实例页面
+  max-width: 400px;
+  height: 400px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  >div {
+    position: relative;
+    width: 100%;
+    height: inherit;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.blend-mode-screen {
+  >div {
+    mix-blend-mode: screen;
+  }
+}
+
+.blend-mode-normal {
+  >div {
+    mix-blend-mode: normal;
+  }
+}
+
+.blend-mode-multiply {
+  >div {
+    mix-blend-mode: multiply;
+  }
+}
+
+.blend-mode-overlay {
+  >div {
+    mix-blend-mode: overlay;
+  }
+}
+
+.blend-mode-darken {
+  >div {
+    mix-blend-mode: darken;
+  }
+}
+
+.blend-mode-lighten {
+  >div {
+    mix-blend-mode: lighten;
+  }
+}
+
+.blend-mode-colorDodge {
+  >div {
+    mix-blend-mode: color-dodge;
+  }
+}
+
+.blend-mode-colorBurn {
+  >div {
+    mix-blend-mode: color-burn;
+  }
+}
+
+.blend-mode-hardLight {
+  >div {
+    mix-blend-mode: hard-light;
+  }
+}
+
+.blend-mode-softLight {
+  >div {
+    mix-blend-mode: soft-light;
+  }
+}
+
+.blend-mode-difference {
+  >div {
+    mix-blend-mode: difference;
+  }
+}
+
+.blend-mode-exclusion {
+  >div {
+    mix-blend-mode: exclusion;
+  }
+}
+
+.blend-mode-hue {
+  >div {
+    mix-blend-mode: hue;
+  }
+}
+
+.blend-mode-saturation {
+  >div {
+    mix-blend-mode: saturation;
+  }
+}
+
+.blend-mode-color {
+  >div {
+    mix-blend-mode: color;
+  }
+}
+
+.blend-mode-luminosity {
+  >div {
+    mix-blend-mode: luminosity;
+  }
+}
+
+// initial 初始 inherit 继承 unset 复原
