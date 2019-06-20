@@ -51,7 +51,8 @@ export default class Color extends Component {
   }
 
   sort = (value, type) => {
-    const colors = value.slice(0)
+    // const colors = value.slice(0)
+    const colors = value.map((item) => (this.getHue(item)))
     colors.sort((x, y) => {
       const x1 = this.getHue(x).replace('hsl(', '').replace(')').replace(/%/g, '').split(',')
       const y1 = this.getHue(y).replace('hsl(', '').replace(')').replace(/%/g, '').split(',')
@@ -64,10 +65,9 @@ export default class Color extends Component {
 
       if (type === 'hue') {
         if (hue1 === hue2) { // 色相
-          if (saturation1 === saturation2) { // 饱和度
-            return lightness2 - lightness1
-          }
-          return saturation2 - saturation1
+          const c1 = Math.sqrt(Math.pow(saturation1, 2) + Math.pow(lightness1, 2))
+          const c2 = Math.sqrt(Math.pow(saturation2, 2) + Math.pow(lightness2, 2))
+          return c2 - c1
         }
         return hue2 - hue1
       } else if (type === 'saturation') {
@@ -78,19 +78,10 @@ export default class Color extends Component {
           return lightness2 - lightness1
         }
         return saturation2 - saturation1
-      } else if (type === 'lightness') {
-        if (lightness2 === lightness1) { // 饱和度
-          if (hue2 === hue1) { // 色相
-            return saturation2 - saturation1
-          }
-          return hue2 - hue1
-        }
-        return lightness2 - lightness1
       } else {
-        if (hue2 === hue1) {
-          return (saturation2 + lightness2) - (saturation1 + lightness1)
-        }
-        return hue2 - hue1
+        const c1 = Math.sqrt(Math.pow(saturation1, 2) + Math.pow(lightness1, 2))
+        const c2 = Math.sqrt(Math.pow(saturation2, 2) + Math.pow(lightness2, 2))
+        return (c2 + hue2) - (c1 + hue1)
       }
     })
     return colors
