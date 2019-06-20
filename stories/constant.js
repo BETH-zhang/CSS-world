@@ -351,7 +351,18 @@ export const carouselArray = [
     type: 'filter',
     name: '配合滤镜效果',
     data: carouselData,
+  }, {
+    type: 'maskSvg',
+    name: '遮罩效果',
+    data: carouselData,
   }
+]
+
+export const maskArray = [
+  {
+    type: 'svg',
+    name: '图形遮罩',
+  },
 ]
 
 export const timeCount = () => {

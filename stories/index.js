@@ -3,8 +3,8 @@ import { Row, Col, Card } from '../node_modules/antd/dist/antd'
 
 import { storiesOf } from '@storybook/react';
 import '../node_modules/antd/dist/antd.less'
-import Index, { Carousel, BlendMode, Color, Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
-import { carouselArray, blendModeArray, timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
+import Index, { Mask, Carousel, BlendMode, Color, Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
+import { maskArray, carouselArray, blendModeArray, timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
 import { createRandomColors } from '../src/utils/index'
 // https://www.invisionapp.com/inside-design/category/design/
 // https://www.zhangxinxu.com/php/microCodeDetail?id=12
@@ -29,6 +29,15 @@ storiesOf('Home', module)
   .add('Index', () => (<Index />))
 
 storiesOf('Base', module)
+  .add('Mask', () => (<Row>
+    {
+      maskArray.map((item) => (<Col sm={12}>
+        <Card title={item.name}>
+          <Mask type={item.type} />
+        </Card>
+      </Col>))
+    }
+  </Row>))
   .add('Carousel', () => (<Row>
     {
       carouselArray.map((item) => (<Col sm={12}>

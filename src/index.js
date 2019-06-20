@@ -9,7 +9,9 @@ import CSvg from './components/Svg'
 import CColor from './components/Color'
 import CBlendMode from './components/BlendMode'
 import CCarousel from './components/Carousel'
+import CMask from './components/Mask'
 
+export const Mask = CMask
 export const Carousel = CCarousel
 export const BlendMode = CBlendMode
 export const Color = CColor
