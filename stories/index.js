@@ -3,8 +3,8 @@ import { Row, Col, Card } from '../node_modules/antd/dist/antd'
 
 import { storiesOf } from '@storybook/react';
 import '../node_modules/antd/dist/antd.less'
-import Index, { BlendMode, Color, Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
-import { blendModeArray, timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
+import Index, { Carousel, BlendMode, Color, Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
+import { carouselArray, blendModeArray, timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
 import { createRandomColors } from '../src/utils/index'
 // https://www.invisionapp.com/inside-design/category/design/
 // https://www.zhangxinxu.com/php/microCodeDetail?id=12
@@ -25,11 +25,20 @@ const filters = [
     data: filterMixArray,
   }
 ]
-storiesOf('home', module)
-  .add('index', () => (<Index />))
+storiesOf('Home', module)
+  .add('Index', () => (<Index />))
 
-storiesOf('base', module)
-  .add('blend-mode', () => (<Row>
+storiesOf('Base', module)
+  .add('Carousel', () => (<Row>
+    {
+      carouselArray.map((item) => (<Col sm={12}>
+        <Card title={item.name}>
+          <Carousel type={item.type} data={item.data} />
+        </Card>
+      </Col>))
+    }
+  </Row>))
+  .add('Blend Mode', () => (<Row>
     <Col sm={24}>
       <Card title="原图">
         <BlendMode style={{
@@ -54,7 +63,7 @@ storiesOf('base', module)
       </Col>))
     }
   </Row>))
-  .add('color', () => (<Row>
+  .add('Color', () => (<Row>
     <Col sm={6}>
       <Card title="随机颜色组">
         <Color colors={colors} />
@@ -79,7 +88,7 @@ storiesOf('base', module)
       </Card>
     </Col>
   </Row>))
-  .add('svg', () => (<Row>
+  .add('Svg', () => (<Row>
     <Col sm={24}>
       <Card title="多彩圆环倒计时" onClick={timeCount}>
         <Svg className="time-count">
@@ -127,7 +136,7 @@ storiesOf('base', module)
       </Card>
     </Col>
   </Row>))
-  .add('filter', () => (<Row>
+  .add('Filter', () => (<Row>
     <Col sm={24}>
       <Card title="原图">
         <ImageFilter type="" />
@@ -155,14 +164,14 @@ storiesOf('base', module)
     }
     
   </Row>))
-  .add('filter-video', () => (<Row>
+  .add('Filter Video', () => (<Row>
     <Col sm={24}>
       <Card title="原视频">
         <VideoFilter type="" src={videoUrl} autoPlay />
       </Card>
     </Col>  
   </Row>))
-  .add('image', () => (<Row>
+  .add('Image', () => (<Row>
     <Col sm={12}>
       <Card title="图片1"><Image /></Card>
     </Col>
@@ -170,7 +179,7 @@ storiesOf('base', module)
       <Card title="图片1-active"><Image active /></Card> 
     </Col>
   </Row>))
-  .add('text', () => (<Row>
+  .add('Text', () => (<Row>
     <Col sm={12}>
       <Card title="文字1">
         <Text>美小技术部</Text>
@@ -184,7 +193,7 @@ storiesOf('base', module)
       </Card> 
     </Col>
   </Row>))
-  .add('button', () => (<Row>
+  .add('Button', () => (<Row>
     <Col sm={24}>
       <Card title="按钮">
         <Button type="install">

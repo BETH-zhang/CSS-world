@@ -8,7 +8,9 @@ import CVideoFilter from './components/VideoFilter'
 import CSvg from './components/Svg'
 import CColor from './components/Color'
 import CBlendMode from './components/BlendMode'
+import CCarousel from './components/Carousel'
 
+export const Carousel = CCarousel
 export const BlendMode = CBlendMode
 export const Color = CColor
 export const Svg = CSvg

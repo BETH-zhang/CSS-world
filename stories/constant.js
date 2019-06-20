@@ -303,6 +303,57 @@ export const blendModeArray = [
   }
 ]
 
+const carouselData = [{
+  img: 'https://hq-static.smartstudy.com/web/garden/jx321ijy_8BWgeqdMyEtOzkVN3Prje5dI.jpg',
+}, {
+  img: 'https://hq-static.smartstudy.com/web/garden/jx3216dp_OlFWWH1ViKSlU8oa77cUddz5.jpg',
+}, {
+  img: 'https://hq-static.smartstudy.com/web/garden/jx31zhi2_5v3U0XRlUlngs3ffOBcuCKFz.jpg',
+}, {
+  img: 'https://hq-static.smartstudy.com/web/garden/jx31uvu2_ikqw9l6z9RXgUSv1tXbMTCg0.JPG',
+}]
+
+export const carouselArray = [
+  {
+    type: '',
+    name: '没有效果',
+    data: carouselData,
+  }, {
+    type: 'clipCircle',
+    name: '单个圆形扩展动效',
+    data: carouselData,
+    description: 'circle(半径 at 圆心坐标)',
+  }, {
+    type: 'clipTriangle',
+    name: '三角效果扩展',
+    data: carouselData,
+  }, {
+    type: 'clipRect',
+    name: '带圆角的矩形',
+    data: carouselData,
+  }, {
+    type: 'clipDiamond',
+    name: '菱形效果扩展',
+    data: carouselData,
+  }, {
+    type: 'clipRectSp',
+    name: '十字星到矩形效果',
+    data: carouselData,
+  }, {
+    type: 'clipSector',
+    name: '扇形效果扩展',
+    data: carouselData,
+  }, {
+    type: 'svgMask',
+    name: 'Svg 图形遮罩',
+    data: carouselData,
+  }, {
+    type: 'filter',
+    name: '配合滤镜效果',
+    data: carouselData,
+  }
+]
+
 export const timeCount = () => {
   var eleCircles=document.querySelectorAll(".time-count circle");
   var eleTimeSec=document.querySelector(".time-second");
