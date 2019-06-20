@@ -3,13 +3,15 @@ import { Row, Col, Card } from '../node_modules/antd/dist/antd'
 
 import { storiesOf } from '@storybook/react';
 import '../node_modules/antd/dist/antd.less'
-import Index, { Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
+import Index, { Color, Svg, VideoFilter, ImageFilter, Image, Text, Button } from '../src'
 import { timeCountCss, timeCount, filterArray, filterMixArray, filterApplyArray } from './constant'
+import { createRandomColors } from '../src/utils/index'
 // https://www.invisionapp.com/inside-design/category/design/
 // https://www.zhangxinxu.com/php/microCodeDetail?id=12
 // 
 import defaultImg from '../src/components/ImageFilter/mr.jpg'
 const videoUrl = 'https://uskid.oss-cn-beijing.aliyuncs.com/video/%E5%8C%A0%E5%BF%83%E6%AF%94%E5%BF%83-%E7%BF%9F%E5%B0%91%E6%88%90%E8%80%81%E5%B8%88(5min).mp4'
+const colors = createRandomColors()
 
 const filters = [
   {
@@ -27,6 +29,16 @@ storiesOf('home', module)
   .add('index', () => (<Index />))
 
 storiesOf('base', module)
+  .add('color', () => (<Row>
+    <Col sm={12}>
+      <Card title="随机颜色组">
+        <Color colors={colors} />
+      </Card>
+      <Card title="排序颜色组">
+        <Color colors={colors} type="sort" />
+      </Card>
+    </Col>  
+  </Row>))
   .add('svg', () => (<Row>
     <Col sm={24}>
       <Card title="多彩圆环倒计时" onClick={timeCount}>

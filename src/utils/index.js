@@ -1,8 +1,28 @@
+export const createRandomColors = () => {
+  const colors = []
+  Array(100).fill(0).forEach(() => {
+    const r = parseInt(Math.random() * 256);
+    const g = parseInt(Math.random() * 256);
+    const b = parseInt(Math.random() * 256);
+    const rgb = randomColor()
+    const hex = rgbPToHex(r, g, b)
+    const hex1 = rgbStrToHex(rgb)
+    const hsl = rgbToHsl(r, g, b)
+    colors.push(rgb)
+    colors.push(hex)
+    colors.push(hex1)
+    colors.push(hsl)
+    // hsl
+    // rgb -> hsl
+    // hex -> rgb -> hsl
+  })
+  return colors
+}
+
 export const randomColor = () => {
   const r = parseInt(Math.random() * 256);
   const g = parseInt(Math.random() * 256);
   const b = parseInt(Math.random() * 256);
-  const rgb = "rgb("+r+","+g+","+b+")";
   const rgb = `rgb(${r}, ${g}, ${b})`
   return rgb;
 }
@@ -18,6 +38,7 @@ export const rgbToHex = (r, g, b, a) => {
 }
 
 // 255, 25, 2
+// ok
 export const rgbPToHex = (r, g, b, a) => {
   let red = r.toString(16)
   let green = g.toString(16)
@@ -41,6 +62,7 @@ export const rgbPToHex = (r, g, b, a) => {
 }
 
 // rgba(255, 25, 2)
+// ok
 export const rgbStrToHex = (rgb) => {
   // Choose correct separator
   let sep = rgb.indexOf(",") > -1 ? "," : " ";
@@ -79,9 +101,10 @@ export const rgbPerToHex = (rgba) => {
   }
 }
 
-export const hexToRGB = (h) => {
+// ok
+export const hexToRGB = (h, pct) => {
   let r = 0, g = 0, b = 0;
-  isPct = isPct === true;
+  let isPct = pct === true;
 
   if (h.length == 4) {
     r = "0x" + h[1] + h[1];
@@ -106,7 +129,7 @@ export const hexToRGB = (h) => {
 export const hexAToRGBA = (h) => {
   let r = 0, g = 0, b = 0, a = 1;
 
-  if (h.length == 5) {
+  if (h.length == 7) {
     r = "0x" + h[1] + h[1];
     g = "0x" + h[2] + h[2];
     b = "0x" + h[3] + h[3];
@@ -153,6 +176,7 @@ export const hexAToRGBA = (h) => {
 //   return "rgba(" + (isPct ? r + "%," + g + "%," + b + "%," + a + "%" : +r + "," + +g + "," + +b + "," + a) + ")";
 // }
 
+// ok
 export const rgbToHsl = (r, g, b) => {
   const red = r / 255
   const green = g / 255
