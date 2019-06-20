@@ -30,14 +30,29 @@ storiesOf('home', module)
 
 storiesOf('base', module)
   .add('color', () => (<Row>
-    <Col sm={12}>
+    <Col sm={6}>
       <Card title="随机颜色组">
         <Color colors={colors} />
       </Card>
-      <Card title="排序颜色组">
+    </Col>
+
+    <Col sm={6}>
+      <Card title="色相排序-hsl">
+        <Color colors={colors} type="sort" sortType="hue" />
+      </Card>
+    </Col>
+
+    <Col sm={6}>
+      <Card title="饱和度排序-slh">
+        <Color colors={colors} type="sort" sortType="saturation" />
+      </Card>
+    </Col>
+
+    <Col sm={6}>
+      <Card title="亮度排序-shl">
         <Color colors={colors} type="sort" />
       </Card>
-    </Col>  
+    </Col>
   </Row>))
   .add('svg', () => (<Row>
     <Col sm={24}>
