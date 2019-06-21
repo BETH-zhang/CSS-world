@@ -80,14 +80,14 @@ storiesOf('Base', module)
     </Col>
 
     <Col sm={6}>
-      <Card title="色相排序-hsl">
-        <Color colors={colors} type="sort" sortType="hue" />
+      <Card title="rgb排序">
+        <Color colors={colors} type="sortRgb" />
       </Card>
     </Col>
 
     <Col sm={6}>
-      <Card title="饱和度排序-slh">
-        <Color colors={colors} type="sort" sortType="saturation" />
+      <Card title="饱和度排序-hsl">
+        <Color colors={colors} type="sort" sortType="hue" />
       </Card>
     </Col>
 

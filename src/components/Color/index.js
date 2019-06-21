@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import './index.less'
-import { rgbToHsl, hexToRGB } from '../../utils/index'
+import { rgbToHsl, hexToRGB, hslToRgb } from '../../utils/index'
 import { isObject } from 'us-common-utils'
 export default class Color extends Component {
   constructor(props) {
     super(props)
     let colors = props.colors
-    if (props.type === 'sort') {
+    if (props.type === 'sortRgb') {
+      colors = this.sortRgb(props.colors)
+    } if (props.type === 'sort') {
       colors = this.sort(props.colors, props.sortType)
     } else if (props.type === 'divide') {
       colors = this.divide(props.colors)
@@ -31,6 +33,19 @@ export default class Color extends Component {
     return c
   }
 
+  getRgb = (color) => {
+    let c = null
+    if (color.indexOf('rgb') > -1) {
+      c = color
+    } else if (color.indexOf('#') > -1) {
+      c = hexToRGB(color)
+    } else if (color.indexOf('hsl') > -1) {
+      const ary = color.replace('hsl(', '').replace(')', '').replace(/%/g, '').split(',')
+      c = hslToRgb(ary[0], ary[1] / 100, ary[2] / 100)
+    }
+    return c
+  }
+
   divide = () => {
     const colorWheel = Array(12).fill([]) // 30度
     const colors = this.props.colors.slice(0)
@@ -51,8 +66,7 @@ export default class Color extends Component {
   }
 
   sort = (value, type) => {
-    // const colors = value.slice(0)
-    const colors = value.map((item) => (this.getHue(item)))
+    const colors = value.slice(0)
     colors.sort((x, y) => {
       const x1 = this.getHue(x).replace('hsl(', '').replace(')').replace(/%/g, '').split(',')
       const y1 = this.getHue(y).replace('hsl(', '').replace(')').replace(/%/g, '').split(',')
@@ -83,6 +97,18 @@ export default class Color extends Component {
         const c2 = Math.sqrt(Math.pow(saturation2, 2) + Math.pow(lightness2, 2))
         return (c2 + hue2) - (c1 + hue1)
       }
+    })
+    return colors
+  }
+
+  sortRgb = (value) => {
+    const colors = value.slice(0)
+    colors.sort((x, y) => {
+      const rgb1 = this.getRgb(x).replace('rgb(', '').replace('rgba(', '').replace(')', '').split(',')
+      const rgb2 = this.getRgb(y).replace('rgb(', '').replace('rgba(', '').replace(')', '').split(',') 
+      const r1 = Math.sqrt(3 * Math.pow(rgb1[0], 2) + 4 * Math.pow(rgb1[1], 2) + 2 * Math.pow(rgb1[2], 2))
+      const r2 = Math.sqrt(3 * Math.pow(rgb2[0], 2) + 4 * Math.pow(rgb2[1], 2) + 2 * Math.pow(rgb2[2], 2))
+      return r2 - r1
     })
     return colors
   }

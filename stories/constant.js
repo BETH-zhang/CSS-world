@@ -315,6 +315,10 @@ const carouselData = [{
 
 export const carouselArray = [
   {
+    type: 'maskSvg',
+    name: '遮罩效果',
+    data: carouselData,
+  }, {
     type: '',
     name: '没有效果',
     data: carouselData,
@@ -350,10 +354,6 @@ export const carouselArray = [
   }, {
     type: 'filter',
     name: '配合滤镜效果',
-    data: carouselData,
-  }, {
-    type: 'maskSvg',
-    name: '遮罩效果',
     data: carouselData,
   }
 ]
