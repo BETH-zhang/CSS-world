@@ -363,6 +363,22 @@ export const maskArray = [
     type: 'svg',
     name: '图形遮罩',
   },
+  {
+    type: 'radial',
+    name: '径向遮罩'
+  },
+  {
+    type: 'linear',
+    name: '线性模糊'
+  },
+  {
+    type: 'multiply',
+    name: '正片叠底'
+  },
+  {
+    type: 'difference',
+    name: '差值'
+  },
 ]
 
 export const timeCount = () => {

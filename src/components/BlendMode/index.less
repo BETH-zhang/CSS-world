@@ -1,7 +1,8 @@
 .blend-mode {
   overflow: hidden;
-  position: relative;
-  z-index: 1; // 这两行代码，用来与mix-blend-mode混合模式阻隔实例页面
+  // position: relative;
+  // z-index: 1; // 这两行代码，用来与mix-blend-mode混合模式阻隔实例页面
+  isolation: isolate;
   max-width: 400px;
   height: 400px;
   background-size: contain;

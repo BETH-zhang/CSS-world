@@ -49,7 +49,7 @@ storiesOf('Base', module)
   </Row>))
   .add('Blend Mode', () => (<Row>
     <Col sm={24}>
-      <Card title="原图">
+      <Card title="绿色变暗">
         <BlendMode style={{
           backgroundColor: 'green',
           backgroundBlendMode: 'darken'
@@ -59,7 +59,7 @@ storiesOf('Base', module)
 
     {
       blendModeArray.map((item) => (<Col sm={12}>
-        <Card title={item.name}>
+        <Card title={item.name} style={{ backgroundColor: '' }}>
           <BlendMode
             type={item.type}
             img={item.img}

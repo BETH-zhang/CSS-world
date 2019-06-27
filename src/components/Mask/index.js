@@ -15,5 +15,7 @@ export default (props) => {
     }, props.style)}
   >
     {props.children}
+    <div className="mask-layer-img" style={{ backgroundImage: `url(${props.img || defaultImg})` }}></div>
+    <div className="mask-layer"></div>
   </div>)
 }
