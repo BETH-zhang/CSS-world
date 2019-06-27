@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import defaultImg from '../ImageFilter/mr.jpg'
+import defaultImg from '../Filter/mr.jpg'
 
 import './index.less'
 

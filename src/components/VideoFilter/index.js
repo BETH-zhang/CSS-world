@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 
 import './index.less'
-import '../ImageFilter/index.less'
+import '../Filter/index.less'
 
 export default class VideoFilter extends Component {
   componentDidMount() {
