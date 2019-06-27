@@ -379,6 +379,10 @@ export const maskArray = [
     type: 'difference',
     name: '差值'
   },
+  {
+    type: 'color',
+    name: '颜色混合'
+  }
 ]
 
 export const timeCount = () => {
