@@ -14,27 +14,27 @@ export const filterArray = [
   {
     type: 'blur',
     name: '模糊',
-    description: `filter:blur(5px)`,
+    description: `filter:blur(5px)\n blur()不支持百分比 ，支持px em为计量单位`,
   }, {
     type: 'brightness',
     name: '亮度',
-    description: 'filter:brightness(1.4)',
+    description: 'filter:brightness(1.4)\n 在0-1之间调节时最好使用百分比',
   }, {
     type: 'contrast',
     name: '对比度',
-    description: 'filter:contrast(200%)',
+    description: 'filter:contrast(200%)\n 在0-1之间调节时最好使用百分比',
   }, {
     type: 'dropShadow',
     name: '投影',
-    description: 'filter:drop-shadow(4px 4px 8px blue)',
+    description: 'filter:drop-shadow(4px 4px 8px blue)\n 偏移值不支持百分比；另外必须要给出X\Y方向的偏移值，默认颜色是黑色',
   }, {
     type: 'grayscale',
     name: '灰度',
-    description: 'filter:grayscale(50%)',
+    description: 'filter:grayscale(50%)\n 在0-1之间调节',
   }, {
     type: 'hueRotate',
     name: '色调变化',
-    description: 'filter:hue-rotate(90deg)',
+    description: 'filter:hue-rotate(90deg)\n 参数只能是1-360deg,其实最大值不一定是360，由图片的色彩决定',
   }, {
     type: 'invert',
     name: '反相',
@@ -46,11 +46,14 @@ export const filterArray = [
   }, {
     type: 'saturate',
     name: '饱和度',
-    description: 'filter:saturate(230%)',
+    description: 'filter:saturate(230%)\n 参数为百分比和数值',
   }, {
     type: 'sepia',
     name: '褐色',
-    description: 'filter:sepia(60%)',
+    description: 'filter:sepia(60%)\n 在0-1之间调节',
+  }, {
+    type: 'url',
+    name: '引入SVG'
   }
 ]
 

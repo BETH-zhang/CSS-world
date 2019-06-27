@@ -1,4 +1,4 @@
-.image-filter {
+.filter-modal {
   position: relative;
   width: 400px;
   height: 400px;
@@ -31,19 +31,19 @@
   }
 }
 
-.image-filter-night {
+.filter-modal-night {
   // 混合模式
   background-blend-mode: darken;
   // 滤镜
   filter: brightness(80%) grayscale(20%) contrast(1.2);
 }
 
-.image-filter-girl {
+.filter-modal-girl {
   background-blend-mode: soft-light;
   filter: contrast(1.1);
 }
 
-.image-filter-1977 {
+.filter-modal-1977 {
   filter: contrast(1.1) brightness(1.1) saturate(1.3);
 
   &:after {
@@ -52,7 +52,7 @@
   }
 }
 
-.image-filter-aden {
+.filter-modal-aden {
   filter: hue-rotate(-20deg) contrast(.9) saturate(.85) brightness(1.2);
 
   &::after {
@@ -62,7 +62,7 @@
   }
 }
 
-.image-filter-brannan {
+.filter-modal-brannan {
   filter: sepia(.5) contrast(1.4);
 
   &::after {
@@ -71,7 +71,7 @@
   }
 }
 
-.image-filter-brooklyn {
+.filter-modal-brooklyn {
   filter: contrast(.9) brightness(1.1);
 
   &::after {
@@ -81,7 +81,7 @@
   }
 }
 
-.image-filter-clarendon {
+.filter-modal-clarendon {
   filter: contrast(1.2) saturate(1.35);
 
   &:before {
@@ -90,7 +90,7 @@
   }
 }
 
-.image-filter-earlybird {
+.filter-modal-earlybird {
   filter: contrast(.9) sepia(.2);
 
   &::after {
@@ -100,7 +100,7 @@
   }
 }
 
-.image-filter-gingham {
+.filter-modal-gingham {
   filter: brightness(1.05) hue-rotate(-10deg);
 
   &::after {
@@ -109,7 +109,7 @@
   }
 }
 
-.image-filter-hudson {
+.filter-modal-hudson {
   filter: brightness(1.2) contrast(.9) saturate(1.1);
 
   &::after {
@@ -120,11 +120,11 @@
   }
 }
 
-.image-filter-inkwell {
+.filter-modal-inkwell {
   filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(1);
 }
 
-.image-filter-kelvin {
+.filter-modal-kelvin {
   &:before {
     background: #382c34;
     mix-blend-mode: color-dodge;
@@ -136,7 +136,7 @@
   }
 }
 
-.image-filter-lark {
+.filter-modal-lark {
   filter: contrast(.9);
 
   &::before {
@@ -150,7 +150,7 @@
   }
 }
 
-.image-filter-lofi {
+.filter-modal-lofi {
   filter: saturate(1.1) contrast(1.5);
 
   &::after {
@@ -160,7 +160,7 @@
   }
 }
 
-.image-filter-maven {
+.filter-modal-maven {
   filter: sepia(.25) brightness(.95) contrast(.95) saturate(1.5);
 
   &:after {
@@ -169,7 +169,7 @@
   }
 }
 
-.image-filter-mayfair {
+.filter-modal-mayfair {
   filter: contrast(1.1) saturate(1.1);
 
   &::after {
@@ -180,7 +180,7 @@
   }
 }
 
-.image-filter-moon {
+.filter-modal-moon {
   filter: grayscale(1) contrast(1.1) brightness(1.1);
 
   &::before {
@@ -194,7 +194,7 @@
   }
 }
 
-.image-filter-nashville {
+.filter-modal-nashville {
   filter: sepia(.2) contrast(1.2) brightness(1.05) saturate(1.2);
 
   &::before {
@@ -208,7 +208,7 @@
   }
 }
 
-.image-filter-perpetua {
+.filter-modal-perpetua {
   &::after {
     background: -webkit-linear-gradient(top,#005b9a,#e6c13d);
     background: linear-gradient(to bottom,#005b9a,#e6c13d);
@@ -216,7 +216,7 @@
   }
 }
 
-.image-filter-reyes {
+.filter-modal-reyes {
   filter: sepia(.22) brightness(1.1) contrast(.85) saturate(.75);
 
   &::after {
@@ -225,7 +225,7 @@
   }
 }
 
-.image-filter-rise {
+.filter-modal-rise {
   filter: brightness(1.05) sepia(.2) contrast(.9) saturate(.9);
 
   &::before {
@@ -242,7 +242,7 @@
   }
 }
 
-.image-filter-slumber {
+.filter-modal-slumber {
   filter: saturate(.66) brightness(1.05);
 
   &::before {
@@ -256,7 +256,7 @@
   }
 }
 
-.image-filter-stinson {
+.filter-modal-stinson {
   filter: contrast(.75) saturate(.85) brightness(1.15);
 
   &::before {
@@ -265,7 +265,7 @@
   }
 }
 
-.image-filter-toaster {
+.filter-modal-toaster {
   filter: contrast(1.5) brightness(.9);
 
   &::after {
@@ -275,7 +275,7 @@
   }
 }
 
-.image-filter-valencia {
+.filter-modal-valencia {
   filter: contrast(1.08) brightness(1.08) sepia(.08);
 
   &::after {
@@ -285,7 +285,7 @@
   }
 }
 
-.image-filter-walden {
+.filter-modal-walden {
   filter: brightness(1.1) hue-rotate(-10deg) sepia(.3) saturate(1.6);
 
   &::after {
@@ -295,7 +295,7 @@
   }
 }
 
-.image-filter-willow {
+.filter-modal-willow {
   filter: grayscale(.5) contrast(.95) brightness(.9);
 
   &::before {
@@ -310,7 +310,7 @@
   }
 }
 
-.image-filter-xpro2 {
+.filter-modal-xpro2 {
   filter: sepia(.3);
 
   &::after {
@@ -320,12 +320,12 @@
   }
 }
 
-.image-filter-sketch {
+.filter-modal-sketch {
   background-blend-mode: difference;
   filter: brightness(3) invert(1) grayscale(1);
 }
 
-.image-filter-watercolor {
+.filter-modal-watercolor {
   overflow: hidden;
 
   &::before {
@@ -355,7 +355,7 @@
   }
 }
 
-.image-filter-pencil {
+.filter-modal-pencil {
   overflow: hidden;
 
   &::before {
@@ -378,48 +378,52 @@
 }
 
 // 单纯的滤镜效果
-.image-filter-blur {
+.filter-modal-blur {
   filter: blur(5px); // 模糊
 }
 
-.image-filter-brightness {
+.filter-modal-brightness {
   filter: brightness(1.4); // 亮度
 }
 
-.image-filter-contrast {
+.filter-modal-contrast {
   filter: contrast(200%); // 对比度
 }
 
-.image-filter-dropShadow {
+.filter-modal-dropShadow {
   filter: drop-shadow(4px 4px 8px #d06b4d); // 投影
 }
 
-.image-filter-grayscale {
+.filter-modal-grayscale {
   filter: grayscale(50%); // 灰度
 }
 
-.image-filter-hueRotate {
+.filter-modal-hueRotate {
   filter: hue-rotate(90deg); // 色调变化
 }
 
-.image-filter-invert {
+.filter-modal-invert {
   filter: invert(75%); // 反相
 }
 
-.image-filter-opacity {
+.filter-modal-opacity {
   filter: opacity(25%);
 }
 
-.image-filter-saturate {
+.filter-modal-saturate {
   filter: saturate(230%);
 }
 
-.image-filter-sepia {
+.filter-modal-sepia {
   filter: sepia(60%);
 }
 
+.filter-modal-url {
+  filter: url('../../assets/logo.svg')
+}
+
 // 更多应用
-.image-filter-radialBlur {
+.filter-modal-radialBlur {
   .radial-blur {
     position: absolute;
     left: 0; right: 0; top: 0; bottom: 0;
@@ -430,7 +434,7 @@
   }
 }
 
-.image-filter-partBlur {
+.filter-modal-partBlur {
   .radial-blur {
     position: absolute;
     left: 0; right: 0; top: 0; bottom: 0;
@@ -444,7 +448,7 @@
   }
 }
 
-.image-filter-pulse {
+.filter-modal-pulse {
   animation: pulse 5s linear infinite;
 }
 
