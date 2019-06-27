@@ -1,6 +1,6 @@
 {
   "name": "css-world",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "description",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "build-css": "webpack --config webpack.css.config.js",
-    "prepublish": "npm run build",
+    "prepublish": "npm run build-css",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
