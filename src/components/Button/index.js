@@ -1,14 +1,27 @@
-import React from 'react'
-import classNames from 'classnames'
-import './index.less'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default (props) => {
-  return (<div className={classNames({
-    'bb-btn': true,
-    [`bb-btn-${props.type}`]: props.type,
-    'bb-btn-active': props.active,
-    [`bb-btn-${props.type}-active`]: props.active && props.type,
-  })}>
-    {props.children}
-  </div>)
-}
+const DocgenButton = ({ disabled, label, style, onClick }) => (
+  <button disabled={disabled} style={style} onClick={onClick}>
+    {label}
+  </button>
+);
+
+DocgenButton.defaultProps = {
+  disabled: false,
+  onClick: () => {},
+  style: {},
+};
+ 
+DocgenButton.propTypes = {
+  /** Boolean indicating whether the button should render as disabled */
+  disabled: PropTypes.bool,
+  /** button label. */
+  label: PropTypes.string.isRequired,
+  /** onClick handler */
+  onClick: PropTypes.func,
+  /** component styles */
+  style: PropTypes.shape,
+};
+ 
+export default DocgenButton;

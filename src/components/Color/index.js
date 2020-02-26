@@ -118,7 +118,7 @@ export default class Color extends Component {
     return (<div className="colors-modal">
       {
         this.state.colors.map((color, index) => {
-          if (isObject(color)) {
+          if (typeof color === 'object') {
             return (<div>
               <h2>{index * 30}~{(index + 1) * 30}度色相</h2>
               {

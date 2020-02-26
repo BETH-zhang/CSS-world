@@ -1,9 +1,5 @@
-# CSS-World
+# storyline-scaffold
 
-css组件。依赖 public-cli 生成.
-
-## 启动项目
-
-```shell
-npm start
-```
+安装要求：
+- node v10.15
+- npm  v5.6.0 
