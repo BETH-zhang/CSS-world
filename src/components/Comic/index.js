@@ -54,6 +54,7 @@ class Comic extends PureComponent {
           }
         } else {
           if (name) {
+            // console.log('name:', name)
             if (names[0] && !names[1] && startIndex) {
               gap = (blank - startIndex)
             }
@@ -62,7 +63,7 @@ class Comic extends PureComponent {
               key: name,
               parentNode: names[index - 1],
               ...this.props.attributes[name],
-              className: this.props.attributes[name] && this.props.attributes[name].className || name
+              className: this.props.attributes[name] && `${name} ${this.props.attributes[name].className}` || name
             })
             names[index] = name
             name = ''
@@ -73,6 +74,7 @@ class Comic extends PureComponent {
         i++
       }
 
+      // console.log(root, names)
       return this.initRootNode(root)
     }
     return null

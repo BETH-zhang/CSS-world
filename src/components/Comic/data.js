@@ -416,5 +416,198 @@ export const shapeData = {
 
 export const xiaouData = {
     rootNames: `
+    auto
+        head
+            hat
+            hat-right
+            face
+            ear-left1
+            ear-left2
+            ear-left3
+            ear-right1
+            ear-right2
+            eye-left
+            eye-right
+            mouth
+        body
+            belly
+            arm-left
+            arm-right
+            leg-left
+            leg-right
+            hand-left
+            hand-right
+            foot-left
+            foot-right
     `,
+    attributes: {
+        auto: {
+            fontSize: '120px'
+        },
+        head: {
+            className: 'roundRectangle blue relative balance',
+            height: '1.3em',
+            borderRadius: '40px 30px',
+        },
+        hat: {
+            className: 'roundRectangle yellow center',
+            fontSize: '35px',
+            height: '1.3em',
+            top: 0,
+        },
+        'hat-right': {
+            className: 'triangle absolute',
+            style: {
+                fontSize: '35px',
+                borderTop: '1.5em solid transparent',
+                borderRight: '0.7em solid #0081ff',
+                borderBottom: '0 solid transparent',
+                borderLeft: '0.5em solid transparent',
+                marginTop: '-1.2em',
+                right: '0.5em',
+            },
+        },
+        face: {
+            className: 'roundRectangle white center',
+            width: '1.7em',
+            height: '0.8em',
+            top: '55%',
+            borderRadius: '35px',
+        },
+        'ear-left1': {
+            className: 'oval yellow absolute',
+            fontSize: '10px',
+            width: '1em',
+            height: '10em',
+            top: '-2em',
+            left: '-2em',
+        },
+        'ear-left2': {
+            className: 'semicircle semicircle-right center absolute',
+            fontSize: '30px',
+            left: '-0.8em',
+            color: '#eab312',
+        },
+        'ear-left3': {
+            className: 'semicircle semicircle-right center absolute',
+            fontSize: '50px',
+            left: '-0.25em',
+            color: 'rgb(251, 189, 118)',
+        },
+        'ear-right1': {
+            className: 'semicircle semicircle-left center absolute',
+            fontSize: '30px',
+            left: 'initial',
+            right: '-1.4em',
+            color: '#eab312',
+        },
+        'ear-right2': {
+            className: 'semicircle semicircle-left center absolute',
+            fontSize: '50px',
+            left: 'initial',
+            right: '-0.75em',
+            color: 'rgb(251, 189, 118)',
+        },
+        'eye-left': {
+            className: 'circle center absolute black',
+            fontSize: '25px',
+            marginLeft: '-2em',
+        },
+        'eye-right': {
+            className: 'circle center absolute black',
+            fontSize: '25px',
+            marginLeft: '2em',
+        },
+        mouth: {
+            className: 'semicircle center absolute',
+            fontSize: '50px',
+            marginTop: '0.5em',
+        },
+        body: {
+            className: 'oval blue relative',
+            width: '1.2em',
+            height: '1.5em',
+            margin: '0 auto',
+            marginTop: '-0.3em',
+            zIndex: -1,
+            borderRadius: '350px 350px 250px 250px',
+        },
+        belly: {
+            className: 'circle white center',
+            height: '1.3em',
+            top: '40%',
+        },
+        'arm-left': {
+            className: 'roundRectangle blue absolute',
+            fontSize: '50px',
+            width: '1em',
+            height: '2.5em',
+            transform: 'rotate(45deg)',
+            top: '0.3em',
+            left: '-0.5em',
+            zIndex: -2,
+            borderRadius: '0.35em',
+        },
+        'arm-right': {
+            className: 'roundRectangle blue absolute',
+            fontSize: '50px',
+            width: '1em',
+            height: '2.5em',
+            transform: 'rotate(-45deg)',
+            top: '0.3em',
+            right: '-0.5em',
+            zIndex: -2,
+            borderRadius: '0.35em',
+        },
+        'leg-left': {
+            className: 'roundRectangle blue absolute',
+            fontSize: '40px',
+            width: '1em',
+            height: '2em',
+            left: '0.3em',
+            bottom: '-1em',
+            zIndex: -1,
+        },
+        'leg-right': {
+            className: 'roundRectangle blue absolute',
+            fontSize: '40px',
+            width: '1em',
+            height: '2em',
+            right: '0.3em',
+            bottom: '-1em',
+            zIndex: -1,
+        },
+        'hand-left': {
+            className: 'roundRectangle absolute',
+            fontSize: '25px',
+            transform: 'rotate(45deg)',
+            top: '4em',
+            left: '-2.55em',
+            backgroundColor: 'rgb(251, 189, 118)',
+            height: '1.3em',
+            borderRadius: '1px 1px 30px 30px',
+        },
+        'hand-right': {
+            className: 'roundRectangle absolute',
+            fontSize: '25px',
+            transform: 'rotate(-45deg)',
+            top: '4em',
+            right: '-2.55em',
+            backgroundColor: 'rgb(251, 189, 118)',
+            height: '1.3em',
+            borderRadius: '1px 1px 30px 30px',
+        },
+        'foot-left': {
+            className: 'roundRectangle black absolute',
+            fontSize: '20px',
+            top: '111%',
+            left: '0.55em',
+        },
+        'foot-right': {
+            className: 'roundRectangle black absolute',
+            fontSize: '20px',
+            top: '111%',
+            right: '0.55em',
+        },
+    },
 }
