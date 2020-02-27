@@ -2,7 +2,6 @@ import Index from './components/Index'
 
 import CImage from './components/Image'
 import CText from './components/Text'
-import CButton from './components/Button'
 import CFilter from './components/Filter'
 import CVideoFilter from './components/VideoFilter'
 import CSvg from './components/Svg'
@@ -20,6 +19,5 @@ export const VideoFilter = CVideoFilter
 export const Filter = CFilter
 export const Image = CImage
 export const Text = CText
-export const Button = CButton
 
 export default Index
