@@ -182,9 +182,10 @@
 .carousel-modal-maskSvg {
   .slide-in {
     -webkit-mask: url(../../assets/logo.svg) no-repeat center;
-    -webkit-mask-size: 350% 350%;
+    // -webkit-mask-size: 350% 350%;
     mask: url(../../assets/logo.svg) no-repeat center;
-    mask-size: 350% 350%;
+    // mask-size: 350% 350%;
+    -webkit-mask-size: 100% 100%;
     /* 动画 */
     animation: maskHeartIn 1s;
   }
@@ -196,7 +197,16 @@
       mask-size: 0 0;
   }
   to {
-      -webkit-mask-size: 350% 350%;
-      mask-size: 350% 350%;
+      // -webkit-mask-size: 350% 350%;
+      // mask-size: 350% 350%;
+      -webkit-mask-size: 100% 100%;
   }
+}
+
+.carousel-modal .carousel-points .carousel-point-index {
+  background: #cccccc;
+}
+
+.carousel-modal .carousel-points .active {
+  background: #fada14;
 }
