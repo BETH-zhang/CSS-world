@@ -20,7 +20,7 @@ export default class VideoFilter extends Component {
     a.style.margin="0 5px 0 20px";
     document.querySelector('.video-filter').appendChild(b);
     b.addEventListener("change",function(){
-      document.querySelector(".video-filter").className="video-filter image-filter image-filter-"+this.value;
+      document.querySelector(".video-filter").className="video-filter image-filter filter-modal-"+this.value;
     })
   }
 
